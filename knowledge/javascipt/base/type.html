@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用数据类型</title>
+</head>
+<body>
+
+<h1>常用数据类型</h1>
+<h2>基本数据类型【内存中存储String在栈中，可使用typeof来判断类型】</h2>
+<h3>number,Boolean,,undefined,null</h3>
+<h2>复杂数据类型【内存中存储在堆中，可使用string来判断类型】</h2>
+<h3>object,array</h3>
+<h3>Object.prototype.toString.call(arr)</h3>
+<h3>注意：null也需要通过toString()来判断</h3>
+
+<script>
+
+    console.log(Object.prototype.toString.call(123))    //"[object Number]"
+    console.log(Object.prototype.toString.call('123'))    //"[object String]"
+    console.log(Object.prototype.toString.call(undefined))    //"[object Undefined]"
+    console.log(Object.prototype.toString.call(true))    //"[object Boolean]"
+    console.log(Object.prototype.toString.call(null))    //"[object Null]"
+    console.log(Object.prototype.toString.call({}))    //"[object Object]"
+    console.log(Object.prototype.toString.call([]))    //"[object Array]"
+    console.log(Object.prototype.toString.call(function(){}))    //"[object Function]"
+
+    function isArray(arr){  //自己封装的一个函数isArray（），用于判断函数传入的参数是否是数组；
+        if(typeof Array.isArray === "undefined"){  //Array.isArray()是ES5中新增的方法，先判断下其是否是undefined，如果是未定义的话执行该段函数，定义一个Array.isArray()方法；
+            Array.isArray = function(brr){  //如果未定义，则定义函数并传入参数；
+                return Object.prototype.toString.call(brr)=="[object Array]"
+                //通过js中的Object.prototype.toString方法，返回一个判断，假设参数对象值属于数组内置类型，判断时，如果返回true则是数组，否则不是；
+            }
+        }
+        return Array.isArray(arr);  //返回该方法，调用isArray()相当于调用Array.isArray()；
+    }
+</script>
+
+
+</body>
+</html>
