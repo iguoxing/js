@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slice和splice</title>
+</head>
+<body>
+
+<h1>slice</h1>
+<h3>使用方法arr.slice(m,n)</h3>
+<h3>从已有数组中返回选定的元素</h3>
+<h1>splice</h1>
+<h3>arr.splice(m,n,index,index1,...,indexx) </h3>
+<h3>m是起始位置，n是删除元素的个数，index是要添加的元素，在不添加元素的前提下，只有第一个参数是必须的，后面两个都不是必须的，在需要添加元素的情况下，三个元素都是必须的，此方法和slice是不一样的，这个返回的是被删除的元素</h3>
+
+<script type="text/javascript">
+    var arr=[2,3,5,6,8,9]
+    var arr1=arr.slice(1)
+    console.log(arr) // [2,3,5,6,8,9] 老数组是没有变化的，下面不在列举，都是一样的
+    console.log(arr1) //[3,5,6,8,9] 只有起始参数，并且为正值，返回新数组从下标1开始截取
+
+    var arr2=[2,3,5,6,8,9]
+    var arr3=arr2.splice(1,2)
+    console.log(arr2) // [2,6,8,9] 注意看此处才是我们要的数组，从下标1开始删除删除两个
+    console.log(arr3) //[3,5] 此处是我们删除掉的数组
+
+    var arr4=[2,3,5,6,8,9]
+    var arr5=arr4.splice(1,2,"li","ul")
+    console.log(arr4) //[2,"li",6,8,9]
+    console.log(arr5) //[3,5]
+</script>
+
+</body>
+</html>
