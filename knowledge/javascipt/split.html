@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>split</title>
+</head>
+<body>
+<h1>split() 方法用于把一个字符串分割成字符串数组。</h1>
+<h1>stringObject.split(separator,howmany)</h1>
+<h3>separator:必需。字符串或正则表达式，从该参数指定的地方分割 stringObject。</h3>
+<h3>howmany:可选。该参数可指定返回的数组的最大长度。如果设置了该参数，返回的子串不会多于这个参数指定的数组。如果没有设置该参数，整个字符串都会被分割，不考虑它的长度。</h3>
+
+<script type="text/javascript">
+
+    var str="How are you doing today?"
+
+    document.write(str.split(" ") + "<br />")
+    document.write(str.split("") + "<br />")
+    document.write(str.split(" ",3) + "<br />")
+//    \s是指空白，包括空格、换行、tab缩进等所有的空白
+    document.write(str.split(/\s+/) + "<br />")
+
+</script>
+</body>
+</html>
