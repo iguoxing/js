@@ -6,6 +6,10 @@
 </head>
 <body>
 
+
+<h1>slice</h1>
+<h3>方法会将传入的负值与字符串的长度相加（因此，如果两个参数都会负值，第二个参数必须要大于第一个参数，否则返回的是空字符串）</h3>
+
 <h1>substr</h1>
 <h3>arr.substr(m,n)</h3>
 <h3>m必选也可以负值 n选填，注意看这个并不是结束为止而是截取的个数</h3>
@@ -15,6 +19,11 @@
 <h3>m必须，起始位置 ，n选填，截取下标的结束位置，此用法和上面slice有点类似，但是需要注意的是此方法是不支持负值的</h3>
 
 <script type="text/javascript">
+
+    var str = "Wearefamily"; //length为11
+    console.log(str.slice(-3,-8));//相当于str.slice(8,3)//返回空字符串
+    console.log(str.slice(-5,-1));//相当于str.slice(6,10)//返回ami
+
     var arr="sdhgfhf"
     var arr1=arr.substr(1,3)
     console.log(arr)

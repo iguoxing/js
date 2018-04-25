@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>trim</title>
+</head>
+<body>
+
+<h1>trim</h1>
+
+<script type="text/javascript">
+    var a = " m y ";
+    console.log(a);
+    console.log(a.length);
+    console.log(a.replace(/^\s\s*/, ''));
+    console.log(a.replace(/^\s\s*/, '').length);
+    console.log(a.replace(/\s\s*$/, ''));
+    console.log(a.replace(/\s\s*$/, '').length);
+    console.log(a.replace(/^\s\s*/, '').replace(/\s\s*$/, ''));
+    console.log(a.replace(/^\s\s*/, '').replace(/\s\s*$/, '').length);
+    console.log(a.trim());
+    console.log(a.trim().length);
+    console.log(typeof '');
+    console.log(Object.prototype.toString.call(''));
+</script>
+
+</body>
+</html>

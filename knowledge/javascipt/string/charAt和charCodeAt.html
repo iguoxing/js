@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>charAt和charCodeAt</title>
+</head>
+<body>
+
+<h1>chatAt</h1>
+<h3>charAt()返回的是给定位置的字符</h3>
+<h1>charCodeAt</h1>
+<h3>charCodeAt()返回的是给定位置字符的字符编码</h3>
+<h3>formCharCode()将字符编码转为字符串 </h3>
+
+<script>
+    var code = "future";
+    console.log(code.charAt(2)); //t
+    console.log(code.charCodeAt(2)) //116
+    console.log(String.fromCharCode(72,69,76,76,79)) //HELLO
+    console.log("<br />")
+    console.log(String.fromCharCode(65,66,67)) //ABC
+</script>
+
+</body>
+</html>

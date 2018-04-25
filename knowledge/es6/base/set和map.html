@@ -7,6 +7,77 @@
 <body>
 
 <h1>set</h1>
+<ul>
+    <li>它类似于数组，但是成员的值都是唯一的，没有重复的值</li>
+    <li>Set 本身是一个构造函数，用来生成 Set 数据结构</li>
+    <li>Set.prototype.size：返回Set实例的成员总数</li>
+</ul>
+<h3>操作方法</h3>
+<ul>
+    <li>add(value)：添加某个值，返回Set结构本身。</li>
+    <li>delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。</li>
+    <li>has(value)：返回一个布尔值，表示该值是否为Set的成员。</li>
+    <li>clear()：清除所有成员，没有返回值。</li>
+</ul>
+<h3>遍历方法</h3>
+<ul>
+    <li>keys()：返回键名的遍历器</li>
+    <li>values()：返回键值的遍历器</li>
+    <li>entries()：返回键值对的遍历器</li>
+    <li>forEach()：使用回调函数遍历每个成员</li>
+</ul>
+<hr>
+<h1>map</h1>
+<ul>
+    <li>它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键</li>
+    <li>Map的键实际上是跟内存地址绑定的，只要内存地址不一样，就视为两个键</li>
+    <li>这就解决了同名属性碰撞（clash）的问题</li>
+</ul>
+
+<script type="text/javascript">
+    //set数据类型转为array【数组】数据类型
+    let set = new Set(['red', 'green', 'blue']);
+    let arr = [...set];
+    console.log(set)
+    console.log(arr)
+    // ['red', 'green', 'blue']
+
+    let a = new Set([1, 2, 3]);
+    let b = new Set([4, 3, 2]);
+
+    // 并集
+    let union = new Set([...a, ...b]);
+    console.log(union)
+    // Set {1, 2, 3, 4}
+
+    // 交集
+    let intersect = new Set([...a].filter(x => b.has(x)));
+    console.log(intersect)
+    // set {2, 3}
+
+    // 差集
+    let difference = new Set([...a].filter(x => !b.has(x)));
+    console.log(difference)
+    // Set {1}
+
+    let map0 = new Map()
+        .set(1, 'a')
+        .set(2, 'b')
+        .set(3, 'c');
+    console.log(map0)
+
+    let map1 = new Map(
+        [...map0].filter(([k, v]) => k < 3)
+    );
+    console.log(map1)
+    // 产生Map结构 {1 => 'a', 2 => 'b'}
+
+    let map2 = new Map(
+        [...map0].map(([k, v]) => [k * 2, '_' + v])
+    );
+    console.log(map2)
+    // 产生Map结构 {2 => '_a', 4 => '_b', 6 => '_c'}
+</script>
 
 </body>
 </html>
