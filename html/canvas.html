@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+    var c =document.getElementById("myCanvas");
+    var ctx=c.getContext("2d")
+    //开始一条路径，或者重置当前路径
+    ctx.beginPath();
+    ctx.strokeStyle="#aaa"; // 红色路径，设置为red即可
+    ctx.arc(100,75,50,0,2*Math.PI)
+    ctx.stroke()
+</script>
+</body>
+</html>

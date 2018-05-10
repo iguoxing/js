@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+</head>
+<body>
+
+<h1>filter 遍历数组</h1>
+<h3>返回数组的一个子集，回调函数用于逻辑判断是否返回，返回true则把当前元素加入到返回数组中，false则不加。</h3>
+<h3>新数组只包含返回true的值，索引缺失的不包括，原数组保持不变。</h3>
+
+<script type="text/javascript">
+    var a = [1, 2, 3, 4, 5, 6];
+    console.log(a.filter(function(e){
+        return e % 2 == 0;
+    })); // [2, 4, 6]
+    console.log(a) ;//[1, 2, 3, 4, 5, 6]
+</script>
+
+</body>
+</html>

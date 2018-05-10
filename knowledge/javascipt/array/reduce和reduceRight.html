@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reduce和reduceRight</title>
+</head>
+<body>
+
+<h1>遍历数组，调用回调函数，</h1>
+<h3>将数组元素组合成一个值，reduce从索引最小值开始，reduceRight反向，方法有两个参数</h3>
+<hr>
+<ul>
+    <li>回调函数：把两个值合为一个，返回结果；</li>
+    <li>value，一个初始值，可选；</li>
+</ul>
+
+<script type="text/javascript">
+    var a = [1, 2, 3, 4, 5, 6];
+    var b = a.reduce(function(v1, v2){ return v1 + v2 }) ;
+    console.log(a); // [1, 2, 3, 4, 5, 6]
+    console.log(b); // 21
+    var b = a.reduceRight(function(v1, v2){
+        console.log(v1 - v2)
+        return v1 - v2
+    }, 100);
+    console.log(b); // 79
+</script>
+
+</body>
+</html>

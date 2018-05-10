@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forEach</title>
+</head>
+<body>
+
+<h1>forEach 遍历数组</h1>
+<h3>遍历数组，参数为一个回调函数，回调函数有三个参数：</h3>
+<ul>
+    <li>当前元素</li>
+    <li>当前元素索引值</li>
+    <li>整个数组</li>
+</ul>
+
+<script type="text/javascript">
+    var a = new Array(1,2,3,4,5,6);
+    a.forEach(function(e,i,array){
+        array[i]= e + 1;
+    });
+    console.log(a); //[2, 3, 4, 5, 6, 7]
+</script>
+
+</body>
+</html>

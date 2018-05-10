@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>caller</title>
+</head>
+<body>
+
+<h1>
+    Caller
+</h1>
+<h3>caller返回一个对函数的引用，该函数调用了当前函数。</h3>
+<h3>对于函数来说，caller 属性只有在函数执行时才有定义。 如果函数是由 Javascript 程序的顶层调用的，那么 caller 包含的就是 null 。</h3>
+
+<script>
+    function callerDemo() {
+        console.log('arguments.caller')
+        console.log(arguments)
+        console.log(arguments.caller)
+        if (arguments.caller) {
+            var a = callerDemo.caller.toString();
+            console.log(a);
+        } else {
+            console.log("this is a top function");
+        }
+    }
+    function handleCaller() {
+        callerDemo(1);
+    }
+    handleCaller();
+    function calleeDemo() {
+        console.log(arguments.callee);
+    }
+    calleeDemo();
+</script>
+</body>
+</html>

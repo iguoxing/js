@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>every和some</title>
+</head>
+<body>
+
+<h1>这两个函数类似于离散数学中的逻辑判定，回调函数返回一个布尔值</h1>
+<h3>every是所有函数的每个回调函数都返回true的时候才会返回true，当遇到false的时候终止执行，返回false；</h3>
+<h3>some函数是“存在”有一个回调函数返回true的时候终止执行并返回true，否则返回false</h3>
+<hr>
+<h3>在空数组上调用every返回true，some返回false。</h3>
+
+<script type="text/javascript">
+    var a = [1, 2, 3, 4, 5, 6];
+    console.log(a.every(function(e,i,arr){
+        return e < 5;
+    })); //false
+    console.log(a.some(function(e,i,arr){
+        return e > 4;
+    })); //true
+</script>
+
+</body>
+</html>

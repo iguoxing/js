@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>apply</title>
+</head>
+<body>
+
+<h1>apply</h1>
+<h3>apply()方法的作用与call()作用相同，都是改变当前作用域this指向</h3>
+<h1>fun.apply(thisArg, [arg1,arg2,…argN])</h1>
+<ul>
+    <li>从api上可以看出apply()区别于call()是第二个参数，apply()传入的是一个数组。</li>
+    <li>使用apply的好处是可以直接将当前函数的arguments对象作为apply的第二个参数传入，arguments是数组。</li>
+</ul>
+
+<script>
+    /*定义一个人类*/
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    /*定义一个学生类*/
+    function Student(name, age, grade) {
+//让Student()方法拥有(调用)Person()方法的属性
+        console.log('arguments')
+        console.log(arguments)
+        Person.apply(this, arguments); //=>等价于this.name = name;this.age = age;
+        this.grade = grade;
+    }
+
+    //创建一个学生类
+    var student = new Student("zhangsan", 21, "一年级");
+    //测试
+    alert("name:" + student.name + "\n" + "age:" + student.age + "\n" + "grade:" + student.grade);
+</script>
+
+</body>
+</html>

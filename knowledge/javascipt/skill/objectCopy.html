@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>objectCopy</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function deepClone(obj){
+        var result;
+        var oClass=isClass(obj);
+        if(oClass==="Object"){
+            result={};
+        }else if(oClass==="Array"){
+            result=[];
+        }else{
+            return obj;
+        }
+        for(var key in obj){
+            var copy=obj[key];
+            if(isClass(copy)=="Object"){
+                console.log(arguments)
+                console.log(arguments.callee(copy))
+
+                result[key]=arguments.callee(copy);//递归调用
+            }else if(isClass(copy)=="Array"){
+                result[key]=arguments.callee(copy);
+            }else{
+                result[key]=obj[key];
+            }
+        }
+        return result;
+    }
+
+    //判断对象的数据类型
+    function isClass(o){
+        if(o===null) return "Null";
+        if(o===undefined) return "Undefined";
+        return Object.prototype.toString.call(o).slice(8,-1);//[object Array],[object Object]
+    }
+
+    var o=[1,2,[3,4],{a:1,c:[5,6]}];
+    var o2 = deepClone(o);
+    o2[2].push(5);
+    o2[3].b=2;
+    console.log(o)
+    console.log(o2)
+</script>
+
+</body>
+</html>

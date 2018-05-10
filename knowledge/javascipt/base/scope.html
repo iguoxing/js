@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var scope='global'
+    function fn() {
+        var scope;
+        scope='local'
+        console.log(scope)
+    }
+
+    fn()
+
+
+    function User() {
+        this.name='Vicfell'
+        var age=23
+        this.sayAge=function () {
+            console.log('my age is'+age)
+        }
+    }
+
+    var user =new User()
+    console.log(user.name)
+    console.log(user.age)
+    user.sayAge()
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+</head>
+<body>
+
+<h1>map 遍历数组</h1>
+<h3>遍历数组，回调函数返回值组成一个新数组返回</h3>
+<h3>新数组索引结构和原数组一致，原数组不变</h3>
+
+<script type="text/javascript">
+    var a = [1, 2, 3, 4, 5, 6];
+    console.log(a.map(function(e){
+        return e * e;
+    })); // [1, 4, 9, 16, 25, 36]
+    console.log(a); //[1, 2, 3, 4, 5, 6]
+</script>
+
+</body>
+</html>
